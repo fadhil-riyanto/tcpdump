@@ -13,16 +13,18 @@ const (
 )
 
 func handleRequest(conn net.Conn) {
-	buff := make([]byte, 50)
+	buff := make([]byte, 8)
 	for {
 		_, err := conn.Read(buff)
 
 		if err != nil {
 			println("Read data failed:", err.Error())
 			// os.Exit(1)
+			return
 		}
 
-		log.Printf("[ 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x ]", buff[0], buff[1], buff[2], buff[3], buff[4], buff[5], buff[6], buff[7])
+		log.Printf("[ 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x ] | %c%c%c%c%c%c%c%c", buff[0], buff[1], buff[2], buff[3], buff[4], buff[5], buff[6], buff[7],
+			buff[0], buff[1], buff[2], buff[3], buff[4], buff[5], buff[6], buff[7])
 	}
 
 }
