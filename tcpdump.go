@@ -22,7 +22,7 @@ func handleRequest(conn net.Conn) {
 			// os.Exit(1)
 		}
 
-		log.Printf("[ 0x%01x 0x%01x 0x%01x 0x%01x 0x%01x 0x%01x 0x%01x 0x%01x ]", buff[0], buff[1], buff[2], buff[3], buff[4], buff[5], buff[6], buff[7])
+		log.Printf("[ 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x ]", buff[0], buff[1], buff[2], buff[3], buff[4], buff[5], buff[6], buff[7])
 	}
 
 }
